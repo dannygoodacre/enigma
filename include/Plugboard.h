@@ -7,7 +7,6 @@ class Plugboard
 {
     public:
         Plugboard(std::vector<std::string> pairs);
-        Plugboard() = default;
         char swap(char letter);
 
     private:
