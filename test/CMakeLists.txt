@@ -8,7 +8,9 @@ add_executable(testenigma
     ../include/Plugboard.h
     ../include/Reflector.h
     ../include/Rotor.h
+    ../include/Machine.h
     test.cpp 
     ../src/Plugboard.cpp 
     ../src/Reflector.cpp 
-    ../src/Rotor.cpp)
+    ../src/Rotor.cpp
+    ../src/Machine.cpp)

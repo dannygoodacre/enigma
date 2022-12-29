@@ -6,7 +6,9 @@ add_executable(enigma
     ../include/Plugboard.h
     ../include/Reflector.h
     ../include/Rotor.h
+    ../include/Machine.h
     ../src/main.cpp 
     ../src/Plugboard.cpp 
     ../src/Reflector.cpp 
-    ../src/Rotor.cpp)
+    ../src/Rotor.cpp
+    ../src/Machine.cpp)
