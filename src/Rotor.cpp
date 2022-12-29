@@ -60,6 +60,11 @@ void Rotor::setRotorSetting(char rotorSetting)
     this->currentRotorSetting = rotorSetting;
 }
 
+void Rotor::resetRotorSetting()
+{
+    this->currentRotorSetting = this->initRotorSetting;
+}
+
 void Rotor::tick()
 {
     this->currentRotorSetting++;

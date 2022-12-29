@@ -15,6 +15,7 @@ class Rotor
         Rotor(int number, char initRotorSetting, char initRingSetting);
         int getRotorSetting();
         void setRotorSetting(char rotorSetting);
+        void resetRotorSetting();
         void tick();
         char swap(char letter, bool isMovingTowardReflector);
 
