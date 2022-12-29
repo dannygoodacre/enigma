@@ -34,3 +34,6 @@
 # CMake build directories
 /build/
 /test/build/
+
+# VSCode
+/.vscode
