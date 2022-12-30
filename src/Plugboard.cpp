@@ -5,6 +5,7 @@ Plugboard::Plugboard(std::vector<std::string> pairs)
     this->pairs = pairs;
 }
 
+// Return letter based on pair in pairs vector. If no pair, return letter.
 char Plugboard::swap(char letter)
 {
     bool found = false;

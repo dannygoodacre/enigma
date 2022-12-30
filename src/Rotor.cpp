@@ -2,6 +2,7 @@
 
 const std::vector<std::string> Rotor::allPermutations[12] = 
 {
+    // Rotor permutations
     {"AELTPHQXRU","BKNW","CMOY","DFG","IV","JZ","S"}, 
     {"FIXVYOMW","CDKLHUP","ESZ","BJ","GR","NT","A","Q"}, 
     {"ABDHPEJT","CFLVMZOYQIRWUKXSG","N"}, 
@@ -19,6 +20,7 @@ const std::vector<std::string> Rotor::allPermutations[12] =
         "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}
 };
 
+// Return 'a mod b' (the mathematical operation).
 int Rotor::mod(int a, int b)
 {
     while (a < 0)
@@ -26,12 +28,17 @@ int Rotor::mod(int a, int b)
     return a % b;
 }
 
+/*
+Return letter that would enter the second rotor based on the letter which leaves 
+the first rotor and the alignment of the two rotors.
+*/
 char Rotor::swapBetween(char letter, Rotor rotorIn, Rotor rotorOut)
 {
     return mod(letter - 65 + rotorIn.getRotorSetting() 
         - rotorOut.getRotorSetting(), 26) + 65;
 }
 
+// Default constructor gives a static rotor.
 Rotor::Rotor()
 {
     this->number = 12;
@@ -60,16 +67,24 @@ void Rotor::setRotorSetting(char rotorSetting)
     this->currentRotorSetting = rotorSetting;
 }
 
+// Reset rotor setting to that when it was instantiated.
 void Rotor::resetRotorSetting()
 {
     this->currentRotorSetting = this->initRotorSetting;
 }
 
+// Increment rotor setting by one.
 void Rotor::tick()
 {
     this->currentRotorSetting++;
 }
 
+/*
+Return letter paired with given letter, as wired inside rotor. This is 
+represented as a shift by one position in the cyclic permutation corresponding
+to this rotor.
+
+If moving towards reflector, the shift is one place right; if not, left.*/
 char Rotor::swap(char letter, bool isMovingTowardReflector)
 {
     // TODO: Explain the mathematics behind this function.
